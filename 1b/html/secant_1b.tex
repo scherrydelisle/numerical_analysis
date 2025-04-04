@@ -1,0 +1,77 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+    
+    
+\subsection*{Contents}
+
+\begin{itemize}
+\setlength{\itemsep}{-1ex}
+   \item SECANT\_1B: Uses the secant mathod to approximate the solution to f(x) =0,
+\end{itemize}
+\begin{verbatim}
+function [x_sol] = secant_1b(a,x_0,x_1,MAX_N, TOL)
+\end{verbatim}
+
+
+\subsection*{SECANT\_1B: Uses the secant mathod to approximate the solution to f(x) =0,}
+
+\begin{par}
+where f(x) = x\^{}3-a
+\end{par} \vspace{1em}
+\begin{par}
+Inputs a        :  a scalar parameter of the function f(x) = x\^{}3-a x\_0      :  an initial approx for the soln to f(x)=0 x\_1      :  an initial approx for the soln to f(x)=0 MAX\_N    :  the maximum number of iterations of the while loop used to               compute the secant TOL      : the tolerance for the difference between the approximated soln           x\_sol and the initial approximation x\_1 Outputs x\_sol    :  the secant method approx for the soln to f(x)=0
+\end{par} \vspace{1em}
+\begin{par}
+AUTHOR: Simone Cherry-Delisle UCID: 10144438 COURSE: MATH 391 ASSIGNMENT: Assignment 3 Q 1b)
+\end{par} \vspace{1em}
+\begin{verbatim}
+fprintf('For i=1, approx soln is x=%.11f\n', x_0);
+
+i = 2;
+y_0 = x_0^3-a;
+x = y_0;
+y_1 = x_1^3-a;
+
+while i <= MAX_N
+    x = x_1 - y_1*((x_1-x_0)/(y_1-y_0));
+    x = vpa(x);
+    exact_val = vpa(sqrt(3));
+    approx_err = vpa(abs(x - exact_val));
+    x_diff = abs(x - x_1);
+    if x_diff < TOL
+        fprintf('For i=%d, approx soln is x=%.11f\n', i, x);
+        fprintf('   abs(x - x_exact) is %.11f\n\n', approx_err);
+        x_sol = x;
+        return
+    end
+
+    fprintf('For i=%d, approx soln is x=%.11f\n', i, x);
+    fprintf('   abs(x - x_exact) is %.11f\n', approx_err);
+
+    i = i + 1;
+    x_0 = x_1;
+    y_0 = y_1;
+    x_1 = x;
+    y_1 = x^3 - a;
+end
+
+fprintf('\n');
+x_sol = x;
+\end{verbatim}
+
+
+
+\end{document}
+    

@@ -1,0 +1,61 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+    
+    \begin{verbatim}
+% Test_Secant_1b.m
+%
+% The script Test_Secant_1b.m tests the function secant_1b() with a = 3,
+% x_0 = 1, x_1 = 2, and MAX_N = 10
+%
+% AUTHOR: Simone Cherry-Delisle
+% UCID: 10144438
+% COURSE: MATH 391
+% ASSIGNMENT: Assignment 3 Q 1b
+
+a = 3;
+x_0 = 1;
+x_1 = 2;
+MAX_N = 10;
+TOL = 1.0e-13;
+
+x_sol = secant_1b(a,x_0,x_1,MAX_N, TOL);
+fprintf('The secant approx for the root of f(x)=0 is x=%.11f\n',x_sol);
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim}For i=1, approx soln is x=1.00000000000
+For i=2, approx soln is x=1.28571428571
+   abs(x - x_exact) is 0.44633652185
+For i=3, approx soln is x=1.39205955335
+   abs(x - x_exact) is 0.33999125422
+For i=4, approx soln is x=1.44826535047
+   abs(x - x_exact) is 0.28378545710
+For i=5, approx soln is x=1.44203589210
+   abs(x - x_exact) is 0.29001491547
+For i=6, approx soln is x=1.44224868142
+   abs(x - x_exact) is 0.28980212615
+For i=7, approx soln is x=1.44224957044
+   abs(x - x_exact) is 0.28980123713
+For i=8, approx soln is x=1.44224957031
+   abs(x - x_exact) is 0.28980123726
+For i=9, approx soln is x=1.44224957031
+   abs(x - x_exact) is 0.28980123726
+
+The secant approx for the root of f(x)=0 is x=1.44224957031
+\end{verbatim} \color{black}
+    
+
+
+\end{document}
+    
